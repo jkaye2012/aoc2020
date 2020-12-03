@@ -29,6 +29,7 @@ dependencies:
 - filepath
 - http-conduit
 - optparse-applicative
+- transformers
 
 library:
   source-dirs: src
