@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: bba88385b40b226bab603c15c32c19fbde7bd01f90782d42271479e7d255d58e
+-- hash: d8c24ddf92d268b82219d12f2e7b25881875266a2be9488e048ee71e9f44db11
 
 name:           aoc2020
 version:        0.1.0.0
@@ -28,6 +28,7 @@ source-repository head
 library
   exposed-modules:
       AOC.Day1Stars
+      AOC.Day2Passwords
       AOC.Util
       Lib
   other-modules:
@@ -35,7 +36,8 @@ library
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      attoparsec
+    , base >=4.7 && <5
     , bytestring
     , conduit
     , directory
@@ -55,6 +57,7 @@ executable aoc-download
   ghc-options: -threaded -rtsopts -with-rtsopts=-N -main-is Download
   build-depends:
       aoc2020
+    , attoparsec
     , base >=4.7 && <5
     , bytestring
     , conduit
@@ -75,6 +78,7 @@ executable aoc2020-exe
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       aoc2020
+    , attoparsec
     , base >=4.7 && <5
     , bytestring
     , conduit
@@ -95,6 +99,7 @@ test-suite aoc2020-test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       aoc2020
+    , attoparsec
     , base >=4.7 && <5
     , bytestring
     , conduit
