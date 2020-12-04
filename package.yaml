@@ -24,6 +24,7 @@ dependencies:
 - attoparsec
 - bytestring
 - conduit
+- containers
 - directory
 - dotenv
 - filepath
