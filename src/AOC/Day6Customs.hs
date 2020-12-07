@@ -1,5 +1,6 @@
 module AOC.Day6Customs (solutionPt1, solutionPt2) where
 
+import AOC.Util
 import Data.Attoparsec.ByteString.Char8
 import qualified Data.ByteString.Char8 as BS
 import qualified Data.Set as S
@@ -30,6 +31,4 @@ solutionPt1 s = case parseOnly (parseGroup `sepBy` endOfLine) $ BS.pack s of
   Right groups -> print $ sum $ groupAnswers <$> groups
 
 solutionPt2 :: String -> IO ()
-solutionPt2 s = case parseOnly (parseGroup `sepBy` endOfLine) $ BS.pack s of
-  Left err -> putStrLn err
-  Right groups -> print $ sum $ groupAnswers2 <$> groups
+solutionPt2 s = withParsedInput s (parseGroup `sepBy` endOfLine) $ \groups -> sum $ groupAnswers2 <$> groups

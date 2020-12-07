@@ -1,11 +1,12 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module AOC.Util (session, inputDirectory, inputPath, withPuzzleInput, write) where
+module AOC.Util (session, inputDirectory, inputPath, withPuzzleInput, withParsedInput, write) where
 
 import Conduit (MonadThrow)
 import Configuration.Dotenv
 import Control.Exception
 import Control.Monad (unless)
+import Data.Attoparsec.ByteString.Char8
 import qualified Data.ByteString.Char8 as BS
 import Data.Functor ((<&>))
 import Data.List (intercalate)
@@ -87,3 +88,8 @@ withPuzzleInput num solution = do
   cached <- puzzleCached path
   unless cached (write num)
   readFile path >>= solution
+
+withParsedInput :: (Show s) => String -> Parser a -> (a -> s) -> IO ()
+withParsedInput s p a = case parseOnly p $ BS.pack s of
+  Left err -> putStrLn err
+  Right parsed -> print $ a parsed

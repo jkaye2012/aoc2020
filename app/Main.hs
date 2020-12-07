@@ -6,6 +6,7 @@ import qualified AOC.Day3Trees as Day3
 import qualified AOC.Day4Passports as Day4
 import qualified AOC.Day5Seats as Day5
 import qualified AOC.Day6Customs as Day6
+import qualified AOC.Day7Bags as Day7
 import AOC.Util
 
 main :: IO ()
@@ -34,3 +35,7 @@ main = do
   withPuzzleInput 6 Day6.solutionPt1
   putStr "Day 6 part 2: "
   withPuzzleInput 6 Day6.solutionPt2
+  putStr "Day 7 part 1: "
+  withPuzzleInput 7 Day7.solutionPt1
+  putStr "Day 7 part 2: "
+  withPuzzleInput 7 Day7.solutionPt2
