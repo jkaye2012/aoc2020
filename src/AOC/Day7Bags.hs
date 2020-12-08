@@ -41,14 +41,13 @@ parser = do
 
 colorCanContain :: Regulations -> Color -> Color -> Bool
 colorCanContain regs c target
-  | c == target = False
+  | c == target = False -- Bags can't contain themselves
   | otherwise = tryColors (regs ! c) target
   where
-    tryColors :: [BagRule] -> Color -> Bool
     tryColors [] _ = False
-    tryColors (tc : cs) t
-      | snd tc == t = True
-      | otherwise = tryColors cs t || colorCanContain regs (snd tc) t
+    tryColors ((_, tc) : cs) t
+      | tc == t = True
+      | otherwise = tryColors cs t || colorCanContain regs tc t
 
 countColor :: Color -> Regulations -> Int
 countColor target regs =
