@@ -1,5 +1,6 @@
 module Main where
 
+import qualified AOC.Day10Jolts as Day10
 import qualified AOC.Day1Stars as Day1
 import qualified AOC.Day2Passwords as Day2
 import qualified AOC.Day3Trees as Day3
@@ -8,6 +9,7 @@ import qualified AOC.Day5Seats as Day5
 import qualified AOC.Day6Customs as Day6
 import qualified AOC.Day7Bags as Day7
 import qualified AOC.Day8Handheld as Day8
+import qualified AOC.Day9Codec as Day9
 import AOC.Util
 
 main :: IO ()
@@ -44,3 +46,11 @@ main = do
   withPuzzleInput 8 Day8.solutionPt1
   putStr "Day 8 part 2: "
   withPuzzleInput 8 Day8.solutionPt2
+  putStr "Day 9 part 1: "
+  withPuzzleInput 9 Day9.solutionPt1
+  putStr "Day 9 part 2: "
+  withPuzzleInput 9 Day9.solutionPt2
+  putStr "Day 10 part 1: "
+  withPuzzleInput 10 Day10.solutionPt1
+  putStr "Day 10 part 2: "
+  withPuzzleInput 10 Day10.solutionPt2
