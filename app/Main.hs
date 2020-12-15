@@ -1,6 +1,7 @@
 module Main where
 
 import qualified AOC.Day10Jolts as Day10
+import qualified AOC.Day11Seats as Day11
 import qualified AOC.Day1Stars as Day1
 import qualified AOC.Day2Passwords as Day2
 import qualified AOC.Day3Trees as Day3
@@ -54,3 +55,7 @@ main = do
   withPuzzleInput 10 Day10.solutionPt1
   putStr "Day 10 part 2: "
   withPuzzleInput 10 Day10.solutionPt2
+  putStr "Day 11 part 1: "
+  withPuzzleInput 11 Day11.solutionPt1
+  putStr "Day 11 part 2: "
+  withPuzzleInput 11 Day11.solutionPt2
